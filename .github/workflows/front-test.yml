@@ -1,0 +1,21 @@
+name: Front-Test
+
+on:
+  push:
+    branches: ['**'] # Se déclenche sur toutes les branches après un push
+
+jobs:
+  front-unit-test:
+
+    steps:
+      - name: Récupération du code
+        uses : actions/checkout@v4
+        with:
+        node-version: 22
+
+
+      - name: Installation node modules
+        run : npm ci
+
+      - name: Lance les tests
+        run : npm run test
