@@ -1,0 +1,22 @@
+name: Lint project file in CI
+
+on:
+  push:
+    branches: ['**'] # Veut dire que ça se déclenche sur toutes les branches après un push
+
+jobs:
+  build-and-lint:
+    runs-on: ubuntu-latest
+
+
+    steps:
+      - name: Récup du code
+        uses: actions/checkout@v4
+        with:
+          node-version:22
+
+      - name: Installation node modules
+        run: npm in
+      
+      - name: Lint code
+      run: npm run lint
