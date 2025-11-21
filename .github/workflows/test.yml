@@ -4,10 +4,10 @@ on:
   push:
     branches: ['**'] # Veut dire que ça se déclenche sur toutes les branches après un push
 
-    jobs:
+jobs:
       hello-world-ci:
         runs-on: ubuntu-latest
 
         steps:
           - name: Afficher message Hello-world-ci
-            run: evho "HELLO WORLD FROM CI"
+            run: echo "HELLO WORLD FROM CI"
